@@ -1,4 +1,4 @@
-<li class="list-group-item" id="comment_<%= comment.id %>">
+<li class="list-group-item" id="<%= dom_id(comment) %>">
   <div class="d-flex">
     <div class="flex-shrink-0">
       <%= image_tag comment.author.avatar_image, class: "rounded-circle mr-2", width: 36 %>
@@ -9,7 +9,7 @@
       </h5>
       <p><%= comment.body %></p>
     </div>
-    <div>
+    <div id="comment_<%= comment.id %>_edit">
       <% if current_user == comment.author %>
         <%= link_to edit_comment_path(comment), class: "btn btn-link btn-sm text-muted", remote: true do %>
           <i class="fas fa-edit fa-fw"></i>
