@@ -1,0 +1,7 @@
+var classedDiv = $(".<%= dom_id(@follow_request.sender) %>_<%= dom_id(@follow_request.recipient) %>_follow_unfollow")
+
+console.log(classedDiv)
+
+var request_button = $("<%= j(render "follow_requests/follow_unfollow", sender: @follow_request.sender, recipient: @follow_request.recipient) %>")
+
+classedDiv.replaceWith(request_button)

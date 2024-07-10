@@ -1,0 +1,5 @@
+var classedDiv = $(".<%= dom_id(@follow_request.sender) %>_<%= dom_id(@follow_request.recipient) %>_follow_unfollow")
+
+var unfollow_link = $("<%= j(render "delete_request_link", follow_request: @follow_request)%>")
+
+classedDiv.replaceWith(unfollow_link)
