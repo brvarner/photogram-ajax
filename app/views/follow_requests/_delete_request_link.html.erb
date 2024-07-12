@@ -1,0 +1,5 @@
+<div class="<%= dom_id(follow_request.sender) %>_<%= dom_id(follow_request.recipient) %>_follow_unfollow">
+<%= link_to follow_request,  method: :delete, class: "btn btn-outline-secondary", remote: true do %>
+        Un-request
+<% end %>
+</div>
